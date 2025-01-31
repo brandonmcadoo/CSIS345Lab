@@ -49,7 +49,19 @@ public class TicTacToe
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
-        System.out.println(pos[0] + "|" + pos[1] + "|" + pos[2] + "\n" + "-----\n" + pos[3] + "|" + pos[4] + "|" + pos[5] + "\n" + "-----\n" + pos[6] + "|" + pos[7] + "|" + pos[8]);
+        for(int i = 0; i < 2; i++){
+            for(int j = 0; j < 2; j++){
+                System.out.print(pos[j + (i *3)] + "|");
+            }
+            System.out.print(pos[2 + (i * 3)]);
+            System.out.print("\n" + "-----\n");
+        }
+
+        for(int i = 0; i < 2; i++){
+            System.out.print(pos[6 + (i)] + "|");
+        }
+        System.out.print(pos[8] + "\n");
+
     }
 
     /**
@@ -100,7 +112,7 @@ public class TicTacToe
 
 
 
-            }else{
+            } else {
                 System.out.print("Place O [0-8]=>");
                 try{
                     input = scnr.nextInt();
